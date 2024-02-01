@@ -1,0 +1,40 @@
+@import url(./fonts/stylesheet.css);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ 
+::-webkit-scrollbar-track
+  {
+      background-color: #F5F5F5;
+  }
+  
+::-webkit-scrollbar
+  {
+      width: 15px;
+      background-color: #F5F5F5;
+  }
+  
+::-webkit-scrollbar-thumb
+  {
+      background-color: #c9c9c9;
+  }
+  
+  
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+body{
+    width: 100vw;
+    height: fit-content;
+    font-family: 'Apercu Medium';
+    background: #fff0e5;
+}
+
+/* 'coderoom-navy': '#10162f',
+// 'coderoom-yellow': '#ffd300',
+// 'coderoom-abstract': '#eafdc6',
+// 'coderoom-blue': '#3a10e5' */
