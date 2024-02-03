@@ -19,7 +19,12 @@
   {
       background-color: #c9c9c9;
   }
-  
+
+  .visited-btn {
+    background-color: orange; /* Change the color according to your preference */
+    color: white;
+  }
+
   
 *{
     box-sizing: border-box;
