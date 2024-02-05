@@ -23,7 +23,7 @@ export default function Quiz() {
             }}
             onClick={() => handleQuestionNumber(index)}
             key={`question-${index + 1}`}
-            className="m-1 border-solid border border-black text-[#2a2a2a] h-[50px] w-[50px] grid place-items-center rounded focus:ring-2 ring-blue-500 focus:bg-sky-100 Apercu-Medium text-base"
+            className="m-1 border-solid border border-black text-[#2a2a2a] h-[50px] w-[50px] grid place-items-center rounded hover:bg-[#d1d5db] Apercu-Medium text-base"
           >
             {index + 1}
           </button>
@@ -49,15 +49,23 @@ export default function Quiz() {
     }
   };
 
+  const [option, setOption] = useState('');
+
+  const handleOptionClick = (selectedOption:Option) => {
+    setOption(selectedOption.label);
+  }
   
   const QuizOption: React.FC<{ option: Option }> = ({ option }) => (
-    <button  className="w-full min-h-[70px] mb-4 rounded border border-black text-left pl-4 Apercu-Regular text-xl focus:ring-2 ring-blue-500 focus:bg-sky-100 py-2">
+    <button
+      style={{ backgroundColor: option.label  ? 'green' : 'initial' }}
+      onClick={() => handleOptionClick(option)}
+      className="w-full min-h-[70px] mb-4 rounded border border-black text-left pl-4 Apercu-Regular text-xl focus:ring-2 ring-blue-500 focus:bg-sky-100 py-2"
+    >
       <span className="mr-2">{option.label}:</span>
       {option.text}
     </button>
   );
   
-
   // Timer
   const [currentTime, setCurrentTime] = useState(new Date());
   useEffect(() => {
